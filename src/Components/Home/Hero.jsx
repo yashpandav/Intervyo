@@ -1,4 +1,5 @@
 import { Brain, Play, Users } from 'lucide-react';
+import { BetterHiringTextAnimate, SmartInterviewTextAnimate } from './Home';
 
 const HeroSection = () => {
     return (
@@ -6,10 +7,8 @@ const HeroSection = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Smarter Interviews.{' '}
-                <span className="text-teal-500">Better Hiring.</span>
-              </h1>
+              <SmartInterviewTextAnimate/>
+              <BetterHiringTextAnimate/>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 AI-powered platform to evaluate candidates in 5 minutes. Transform your hiring process with intelligent interviews and instant insights.
               </p>
