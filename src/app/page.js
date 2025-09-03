@@ -1,14 +1,19 @@
-import Link from "next/link";
 import "./globals.css";
-
-export default function Home() {
+import Navbar from '../Components/Home/Navigation'
+import HeroSection from '../Components/Home/Hero'
+import FeaturesSection from '../Components/Home/Features'
+import Demo from '../Components/Home/Demo'
+import TestimonialsSection from '../Components/Home/Testimonials'
+import Footer from '../Components/Home/Footer'
+export default function HomePage() {
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the main landing page.</p>
-      <button>
-        SignUp
-      </button>
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <Demo />
+      <TestimonialsSection />
+      <Footer />
     </div>
   );
 }
