@@ -8,7 +8,7 @@ import Demo from "../Components/Home/Demo/Demo";
 import TestimonialsSection from "../Components/Home/Testimonials";
 import Footer from "../Components/Home/Footer";
 import DemoHeadText from "@/Components/Home/Demo/DemoHeadText";
-
+import Pricing from "../Components/Home/Pricing"
 export default function HomePage() {
   const heroRef = useRef(null);
   const featuresRef = useRef(null);
@@ -34,7 +34,7 @@ export default function HomePage() {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.4, // Trigger when 40% of the section is visible
+      threshold: 0.4,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -77,6 +77,18 @@ export default function HomePage() {
           <Demo />
         </div>
       </div>
+      <div className="overflow-hidden -mt-10 bg-white rotate-180">
+        <svg viewBox="0 0 1440 100" className="w-full h-[100px] block">
+          <path
+            fill="#ecfdf5"
+            fillOpacity="1"
+            d="M0,64 C240,110 480,10 720,60 C960,110 1200,10 1440,60 L1440,100 L0,100 Z"
+          ></path>
+        </svg>
+      </div>
+
+
+      <Pricing />
 
       <div ref={testimonialsRef}>
         <TestimonialsSection />

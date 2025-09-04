@@ -23,7 +23,7 @@ export const NavMenu = ({ onNavigate, sections, activeSection }) => {
                     return (
                         <NavigationMenuItem key={item.label}>
                             <NavigationMenuLink asChild>
-                                <t
+                                <p
                                     onClick={() => onNavigate(sections[item.section])}
                                     className={`text-sm sm:text-base font-medium px-2 py-1 rounded-md transition-all cursor-pointer
                     ${isActive
@@ -33,7 +33,7 @@ export const NavMenu = ({ onNavigate, sections, activeSection }) => {
                     `}
                                 >
                                     {item.label}
-                                </t>
+                                </p>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                     );
