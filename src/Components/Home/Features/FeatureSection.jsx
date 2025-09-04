@@ -9,7 +9,7 @@ const FeaturesSection = () => {
         target: sectionRef,
         offset: ["start end", "end start"]
     });
-    
+
     const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
     const rotate = useTransform(scrollYProgress, [0, 1], [0, 2]);
 
@@ -112,13 +112,13 @@ const FeaturesSection = () => {
     };
 
     const itemVariants = {
-        hidden: { 
-            opacity: 0, 
+        hidden: {
+            opacity: 0,
             y: 30,
             scale: 0.95
         },
-        visible: { 
-            opacity: 1, 
+        visible: {
+            opacity: 1,
             y: 0,
             scale: 1,
             transition: {
@@ -131,22 +131,7 @@ const FeaturesSection = () => {
     };
 
     return (
-        <section ref={sectionRef} id="features" className="relative py-24 overflow-hidden">
-            {/* Enhanced Background Elements */}
-            <div className="pointer-events-none absolute inset-0">
-                <motion.div 
-                    style={{ y, rotate }}
-                    className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gradient-to-br from-emerald-200/40 via-teal-200/30 to-green-200/40 blur-3xl"
-                />
-                <motion.div 
-                    style={{ y: useTransform(scrollYProgress, [0, 1], [0, 30]) }}
-                    className="absolute -bottom-12 -right-12 h-80 w-80 rounded-full bg-gradient-to-tl from-teal-300/30 via-emerald-200/25 to-green-300/35 blur-3xl"
-                />
-                <div className="absolute top-1/3 left-1/4 h-2 w-2 rounded-full bg-emerald-400/60" />
-                <div className="absolute top-2/3 right-1/3 h-1 w-1 rounded-full bg-teal-500/70" />
-                <div className="absolute bottom-1/4 left-1/2 h-1.5 w-1.5 rounded-full bg-green-400/50" />
-            </div>
-
+        <section ref={sectionRef} id="features" className="relative pt-18 overflow-visible">
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <motion.div
@@ -154,13 +139,13 @@ const FeaturesSection = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-center mb-20"
+                    className="text-center mb-16"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 border border-emerald-200/50 mb-6">
                         <Sparkles className="text-emerald-600" size={16} />
                         <span className="text-emerald-700 font-medium text-sm">Why teams choose Intervyo</span>
                     </div>
-                    
+
                     <h2 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
                         Hiring that actually
                         <span className="relative ml-3">
@@ -176,7 +161,7 @@ const FeaturesSection = () => {
                             />
                         </span>
                     </h2>
-                    
+
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                         Stop playing resume roulette. Start having conversations that reveal who people really are.
                     </p>
@@ -191,12 +176,12 @@ const FeaturesSection = () => {
                 >
                     {features.map((feature, index) => {
                         const colors = getColorClasses(feature.color);
-                        
+
                         return (
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                whileHover={{ 
+                                whileHover={{
                                     y: -8,
                                     transition: { type: "spring", stiffness: 300, damping: 20 }
                                 }}
@@ -228,25 +213,7 @@ const FeaturesSection = () => {
                         );
                     })}
                 </motion.div>
-
-                {/* Bottom CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4, duration: 0.6 }}
-                    className="text-center mt-16"
-                >
-                    <p className="text-gray-600 mb-6">Ready to transform your hiring process?</p>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                        See it in action
-                        <ArrowRight size={18} />
-                    </motion.button>
-                </motion.div>
+                
             </div>
         </section>
     );

@@ -1,4 +1,6 @@
+"use client";
 import { AvatarCircles } from "@/components/magicui/avatar-circles";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const avatars = [
   {
@@ -33,7 +35,7 @@ function AvatarCirclesDemo() {
 
 const HeroSection = () => {
     return (
-      <div className="pt-28">
+      <div className="relative pt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -82,6 +84,8 @@ const HeroSection = () => {
               <div className="absolute -bottom-8 -left-8 h-16 w-16 rounded-2xl bg-green-100 blur-2xl" />
             </div>
           </div>
+          {/* BLOB */}
+            <div className="pointer-events-none absolute -bottom-20 right-0 w-1/4 max-w-sm h-64 rounded-full bg-teal-300/30 blur-3xl z-0" />
         </div>
       </div>
     );

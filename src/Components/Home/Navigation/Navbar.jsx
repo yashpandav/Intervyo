@@ -6,7 +6,7 @@ import { NavigationSheet } from "./nav-sheet";
 const Navbar = () => {
     return (
         <div>
-            <nav className="fixed top-6 inset-x-4 h-16 max-w-screen-xl mx-auto rounded-full bg-white/80 supports-[backdrop-filter]:bg-white/60 backdrop-blur border border-gray-200 shadow-md dark:border-slate-700/70">
+            <nav className="fixed top-6 inset-x-4 h-16 max-w-screen-xl mx-auto rounded-full bg-white/80 supports-[backdrop-filter]:bg-white/60 backdrop-blur border border-gray-200 shadow-md dark:border-slate-700/70 z-50">
                 <div className="h-full flex items-center justify-between mx-auto px-4">
                     <Image src="/images/BrandLogo.png" alt="Brand Logo" width={120} height={36} />
 
