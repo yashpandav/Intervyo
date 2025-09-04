@@ -3,7 +3,7 @@ import Image from "next/image";
 import { NavMenu } from "./menu";
 import { NavigationSheet } from "./nav-sheet";
 
-const Navbar = () => {
+const Navbar = ({ onNavigate, sections, activeSection }) => {
     return (
         <div>
             <nav className="fixed top-6 inset-x-4 h-16 max-w-screen-xl mx-auto rounded-full bg-white/80 supports-[backdrop-filter]:bg-white/60 backdrop-blur border border-gray-200 shadow-md dark:border-slate-700/70 z-50">
@@ -11,7 +11,10 @@ const Navbar = () => {
                     <Image src="/images/BrandLogo.png" alt="Brand Logo" width={120} height={36} />
 
                     {/* Desktop Menu */}
-                    <NavMenu className="hidden md:block" />
+                    <NavMenu
+                        onNavigate={onNavigate}
+                        sections={sections}
+                        activeSection={activeSection} className="hidden md:block" />
 
                     <div className="flex items-center gap-3">
                         <Button
